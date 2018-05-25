@@ -7,7 +7,7 @@ import * as $ from 'jquery';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'APP';
+    title = 'SOCIAL';
 
     public ngOnInit() {
         $(document).ready(function () {

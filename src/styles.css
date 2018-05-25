@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+.navigation {
+    padding: 0px !important;
+}
+
+.navigation .navbar {
+    border-radius: 0px !important;
+    background: #e53c37 !important;
+    border: none;
+}
+
+.navigation .navbar * {
+    color: white !important;
+}
