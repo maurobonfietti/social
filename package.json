@@ -22,7 +22,9 @@
     "@angular/router": "^6.0.3",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "bootstrap": "3.3.6",
+    "jquery": "1.12"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.3",
