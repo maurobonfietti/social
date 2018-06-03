@@ -1,6 +1,6 @@
 <div class="col-lg-5">
     <h1 class="h1-strong">{{title}}</h1>
-    <form #registerForm="ngForm" (ngSumbit)="onSubmit(registerForm)" class="col-lg-12">
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
         <p>
             <label>Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required />
