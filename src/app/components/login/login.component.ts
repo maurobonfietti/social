@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
     public title:string;
     public user: User;
     public status: string;
+    public identity;
+    public token;
 
     constructor(
         private _route: ActivatedRoute,
@@ -27,8 +29,41 @@ export class LoginComponent implements OnInit {
     }
 
     onSubmit() {
-        alert(this.user.email);
-        alert(this.user.password);
-        console.log(this.user);
+        this._userService.signup(this.user).subscribe(
+            response => {
+                this.identity = response.user;
+                if (!this.identity || !this.identity._id) {
+                    this.status = 'error';
+                }
+                this.status = 'success';
+                this.getToken();
+            },
+            error => {
+                console.log(<any>error);
+                var errorMessage = <any>error;
+                if (errorMessage != null) {
+                    this.status = 'error';
+                }
+            }
+        );
+    }
+
+    getToken() {
+        this._userService.signup(this.user, 'true').subscribe(
+            response => {
+                this.token = response.token;
+                if (this.token.length <= 0) {
+                    this.status = 'error';
+                }
+                this.status = 'success';
+            },
+            error => {
+                console.log(<any>error);
+                var errorMessage = <any>error;
+                if (errorMessage != null) {
+                    this.status = 'error';
+                }
+            }
+        );
     }
 }
