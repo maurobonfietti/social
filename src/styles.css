@@ -7,6 +7,11 @@
     border-bottom: 1px solid #eee;
 }
 
+.active {
+    border-bottom: 3px solid white;
+    /*background: #cc1717;*/
+}
+
 .navigation {
     padding: 0px !important;
 }
@@ -20,3 +25,7 @@
 .navigation .navbar * {
     color: white !important;
 }
+
+/*.navigation .navbar .a {
+    background: #cc1717 !important;
+}*/

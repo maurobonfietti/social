@@ -4,7 +4,7 @@
             <div class="navbar-header">
                 <a href="#" class="navbar-brand">{{title}}</a>
             </div>
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" *ngIf="identity">
                 <li>
                     <a href="#"><span class="glyphicon glyphicon-home"></span> Inicio</a>
                 </li>
@@ -13,6 +13,14 @@
                 </li>
                 <li>
                     <a href="#"><span class="glyphicon glyphicon-user"></span> Gente</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
+                <li>
+                    <a [routerLink]="['/login']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-th-list"></span> Login</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/register']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-user"></span> Registrar</a>
                 </li>
             </ul>
         </div>

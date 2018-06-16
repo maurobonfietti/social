@@ -34,9 +34,11 @@ export class LoginComponent implements OnInit {
                 this.identity = response.user;
                 if (!this.identity || !this.identity._id) {
                     this.status = 'error';
+                } else {
+                    this.status = 'success';
+                    localStorage.setItem('identity', JSON.stringify(this.identity));
+                    this.getToken();   
                 }
-                this.status = 'success';
-                this.getToken();
             },
             error => {
                 console.log(<any>error);
@@ -54,8 +56,10 @@ export class LoginComponent implements OnInit {
                 this.token = response.token;
                 if (this.token.length <= 0) {
                     this.status = 'error';
+                } else {
+                    this.status = 'success';
+                    localStorage.setItem('token', JSON.stringify(this.token));
                 }
-                this.status = 'success';
             },
             error => {
                 console.log(<any>error);
