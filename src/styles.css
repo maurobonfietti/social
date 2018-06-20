@@ -47,3 +47,7 @@
 .btn {
     margin: 5px;
 }
+
+.pointer {
+    cursor: pointer;
+}

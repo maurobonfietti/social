@@ -59,6 +59,7 @@ export class LoginComponent implements OnInit {
                 } else {
                     this.status = 'success';
                     localStorage.setItem('token', JSON.stringify(this.token));
+                    this._router.navigate(['/']);
                 }
             },
             error => {
