@@ -30,6 +30,14 @@
     background: #cc1717 !important;
 }*/
 
+.navigation .navbar .dropdown-menu *{
+    color: black !important;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background-color: #c72e2a !important;
+}
+
 .jumbotron {
     padding: 20px;
     border-radius: 20px;

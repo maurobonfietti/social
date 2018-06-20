@@ -23,6 +23,25 @@
                     <a [routerLink]="['/register']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-user"></span> Registrar</a>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right" *ngIf="identity">
+                <li class="avatar">
+                    <!--img user-->
+                </li>
+                <li class="dropdown">
+                    <a  class="dropdown-toggle" data-toggle="dropdown" href="#">{{identity.name}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-user"></span> Mi perfil</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-cog"></span> Mis datos</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </nav>
 </div>
