@@ -19,7 +19,7 @@ export class UserService {
         let params = JSON.stringify(user);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-        return this._http.post(this.url+'register', params, {headers: headers});
+        return this._http.post(this.url + 'register', params, {headers: headers});
     }
 
     signup(user, gettoken = null): Observable<any> {
@@ -30,7 +30,7 @@ export class UserService {
         let params = JSON.stringify(user);
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-        return this._http.post(this.url+'login', params, {headers: headers});
+        return this._http.post(this.url + 'login', params, {headers: headers});
     }
 
     getIdentity() {
@@ -67,15 +67,15 @@ export class UserService {
         }
     }
 
-    getCounter(userId = null):Observable<any> {
+    getCounter(userId = null): Observable<any> {
         let headers = new HttpHeaders()
             .set('Content-Type', 'application/json')
             .set('Authorization', this.getToken());
 
         if (userId != null) {
-            return this._http.get(this.url+'counters/'+userId, {headers: headers});
+            return this._http.get(this.url + 'counters/' + userId, {headers: headers});
         } else {
-            return this._http.get(this.url+'counters', {headers: headers});
+            return this._http.get(this.url + 'counters', {headers: headers});
         }
     }
 }

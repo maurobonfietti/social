@@ -9,7 +9,7 @@ import {UserService} from '../../services/user.service';
     providers: [UserService]
 })
 export class LoginComponent implements OnInit {
-    public title:string;
+    public title: string;
     public user: User;
     public status: string;
     public identity;
@@ -37,12 +37,12 @@ export class LoginComponent implements OnInit {
                 } else {
                     this.status = 'success';
                     localStorage.setItem('identity', JSON.stringify(this.identity));
-                    this.getToken();   
+                    this.getToken();
                 }
             },
             error => {
-                console.log(<any>error);
-                var errorMessage = <any>error;
+                console.log(<any> error);
+                var errorMessage = <any> error;
                 if (errorMessage != null) {
                     this.status = 'error';
                 }
@@ -57,17 +57,29 @@ export class LoginComponent implements OnInit {
                 if (this.token.length <= 0) {
                     this.status = 'error';
                 } else {
-                    this.status = 'success';
                     localStorage.setItem('token', JSON.stringify(this.token));
-                    this._router.navigate(['/']);
+                    this.getCounters();
                 }
             },
             error => {
-                console.log(<any>error);
-                var errorMessage = <any>error;
+                console.log(<any> error);
+                var errorMessage = <any> error;
                 if (errorMessage != null) {
                     this.status = 'error';
                 }
+            }
+        );
+    }
+
+    getCounters() {
+        this._userService.getCounter().subscribe(
+            response => {
+                localStorage.setItem('stats', JSON.stringify(response));
+                this.status = "success";
+                this._router.navigate(['/']);
+            },
+            error => {
+                console.log(<any> error);
             }
         );
     }
