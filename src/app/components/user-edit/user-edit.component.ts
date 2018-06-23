@@ -30,4 +30,22 @@ export class UserEditComponent implements OnInit {
         console.log(this.user);
         console.log('Componente user-edit cargado.');
     }
+
+    onSubmit() {
+        console.log(this.user);
+//        this._userService.register(this.user).subscribe(
+//            response => {
+//                if (response.user && response.user._id) {
+////                    console.log(response.user);
+//                    this.status = 'success';
+//                    form.reset();
+//                } else {
+//                    this.status = 'error';
+//                }
+//            },
+//            error => {
+//                console.log(<any>error);
+//            }
+//        );
+    }
 }
