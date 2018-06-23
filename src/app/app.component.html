@@ -34,7 +34,7 @@
                             <a href="#"><span class="glyphicon glyphicon-user"></span> Mi perfil</a>
                         </li>
                         <li>
-                            <a href="#"><span class="glyphicon glyphicon-cog"></span> Mis datos</a>
+                            <a [routerLink]="['/mis-datos']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-cog"></span> Mis datos</a>
                         </li>
                         <li>
                             <a class="pointer" (click)="logout()" href="#"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a>
