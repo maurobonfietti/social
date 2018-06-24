@@ -27,11 +27,11 @@
             <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
             <span *ngIf="!email.valid && email.touched" >El email no es correcto!</span>
         </p>
-<!--        <p>
-            <label>Password</label>
-            <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required />
-            <span *ngIf="!password.valid && password.touched" >El password es obligatorio!</span>
-        </p>-->
+        <p>
+            <label>Imagen</label>
+            <input type="file" placeholder="Upload image" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
+            <span *ngIf="!email.valid && email.touched" >El email no es correcto!</span>
+        </p>
         <input type="submit" value="{{title}}" class="btn btn-warning" [disabled]="!userEditForm.form.valid">
     </form>
 </div>
