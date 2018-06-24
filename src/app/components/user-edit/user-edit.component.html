@@ -27,10 +27,12 @@
             <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
             <span *ngIf="!email.valid && email.touched" >El email no es correcto!</span>
         </p>
+        <div *ngIf="user.image">
+            <img src="{{ url + 'get-image-user/' + user.image}}" />
+        </div>
         <p>
             <label>Imagen</label>
-            <input type="file" placeholder="Upload image" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
-            <span *ngIf="!email.valid && email.touched" >El email no es correcto!</span>
+            <input type="file" placeholder="Upload image" (change)="fileChangeEvent($event)" />
         </p>
         <input type="submit" value="{{title}}" class="btn btn-warning" [disabled]="!userEditForm.form.valid">
     </form>
