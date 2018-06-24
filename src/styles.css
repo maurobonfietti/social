@@ -38,6 +38,20 @@
     background-color: #c72e2a !important;
 }
 
+.navigation .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-top: 9px;
+    margin-right: 2px;
+}
+
+.navigation .avatar img {
+    height: auto !important;
+    width: 38px !important;
+}
+
 .jumbotron {
     padding: 20px;
     border-radius: 20px;

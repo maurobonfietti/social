@@ -25,7 +25,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right" *ngIf="identity">
                 <li class="avatar">
-                    <!--img user-->
+                    <img src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity && identity.image" />
                 </li>
                 <li class="dropdown">
                     <a  class="dropdown-toggle" data-toggle="dropdown" href="#">{{identity.name}} <span class="caret"></span></a>
