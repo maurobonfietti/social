@@ -12,7 +12,7 @@
                     <a href="#"><span class="glyphicon glyphicon-th-list"></span> Timeline</a>
                 </li>
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-user"></span> Gente</a>
+                    <a [routerLink]="['/gente']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-user"></span> Gente</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
