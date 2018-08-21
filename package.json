@@ -22,7 +22,7 @@
     "@angular/router": "^6.0.9",
     "bootstrap": "3.3.6",
     "core-js": "^2.5.7",
-    "jquery": "3.0.0",
+    "jquery": "1.12",
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.2.2",
     "zone.js": "^0.8.26"
