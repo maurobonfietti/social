@@ -108,7 +108,7 @@ export class UsersComponent implements OnInit {
 
     followUser(followed) {
         var follow = new Follow('', this.identity._id, followed);
-        
+
         this._followService.addFollow(this.token, follow).subscribe(
             response => {
                 if (!response.follow) {
@@ -116,6 +116,25 @@ export class UsersComponent implements OnInit {
                 } else {
                     this.status = 'success';
                     this.follows.push(followed);
+                }
+            },
+            error => {
+                var errorMessage = <any>error;
+                console.log(errorMessage);
+
+                if (errorMessage != null) {
+                    this.status = 'error';
+                }
+            }
+        );
+    }
+
+    unfollowUser(followed) {
+        this._followService.deleteFollow(this.token, followed).subscribe(
+            response => {
+                var search = this.follows.indexOf(followed);
+                if (search != -1) {
+                    this.follows.splice(search, 1);
                 }
             },
             error => {

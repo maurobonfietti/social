@@ -7,9 +7,6 @@ import {User} from '../models/user';
 @Injectable()
 export class FollowService {
     public url: string;
-//    public identity;
-//    public token;
-//    public stats;
 
     constructor(private _http: HttpClient) {
         this.url = GLOBAL.url;
@@ -27,6 +24,6 @@ export class FollowService {
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
                                        .set('Authorization', token);
 
-        return this._http.delete(this.url + 'follow/'+id, params, {headers: headers});
+        return this._http.delete(this.url + 'follow/'+id, {headers: headers});
     }
 }
