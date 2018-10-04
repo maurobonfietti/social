@@ -1,0 +1,50 @@
+<div id="user-card" class="col-lg-4 panel panel-default pull-left">
+    <div class="avatar">
+        <img src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image"/>
+        <img src="assets/user.png" *ngIf="!identity.image"/>
+    </div>
+    <div class="name-surname">
+        <a href="#">
+            {{identity.name + ' ' + identity.surname}}
+        </a>
+        <p class="nickame">
+            {{identity.nick}}
+        </p>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="stats" *ngIf="stats">
+        <div class="following-data">
+            <a href="#">
+                <span class="label-stats">
+                    Siguiendo
+                </span>
+                <span class="number-stats">
+                    {{stats.following}}
+                </span>
+            </a>
+        </div>
+        <div class="following-data">
+            <a href="#">
+                <span class="label-stats">
+                    Seguidores
+                </span>
+                <span class="number-stats">
+                    {{stats.followed}}
+                </span>
+            </a>
+        </div>
+        <div class="following-data">
+            <a href="#">
+                <span class="label-stats">
+                    Publicaciones
+                </span>
+                <span class="number-stats">
+                    {{stats.publications}}
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ...publications... -->

@@ -59,12 +59,14 @@ export class UserService {
 
     getStats() {
         let stats = JSON.parse(localStorage.getItem('stats'));
+        console.log(stats);
 
         if (stats != "undefined") {
             this.stats = stats;
         } else {
             this.stats = null;
         }
+        console.log(this.stats);
     }
 
     getCounter(userId = null): Observable<any> {
