@@ -1,7 +1,7 @@
 .h1-strong {
     font-size: 35px;
     font-weight: bold;
-    margin-left: 13px;
+    /*margin-left: 13px;*/
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid #eee;
@@ -90,4 +90,85 @@
 .item-user .username .name-surname a {
     color: #555;
     font-weight: bold;
+}
+
+.sidebar-32 {
+    width: 32%;
+}
+
+#user-card {
+    padding: 25px;
+    width: 32%;
+}
+
+#user-card .avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    overflow: hidden;
+    /*margin-top: 9px;*/
+    margin-right: 15px;
+}
+
+#user-card .avatar img {
+    width: 75px !important;
+}
+
+#user-card .name-surname {
+    font-weight: 300;
+    font-size: 17px;
+}
+
+#user-card .name-surname a {
+    color: #555;
+}
+
+#user-card .name-surname .nickame {
+    color: #969393;
+}
+
+#user-card .label-stats,
+#user-card .number-stats {
+    display: block;
+    text-align: center;
+    transition: all 300ms;
+}
+
+#user-card .label-stats {
+    color: #555;
+    font-weight: bold;
+}
+
+#user-card .number-stats {
+    color: green;
+    font-weight: bold;
+}
+
+#user-card .following-data {
+    float: left;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin-top: 10px;
+    border-right: 2px solid #eee;
+}
+
+#user-card .following-data:first-child {
+    padding-left: 6px;
+}
+
+#user-card .following-data:last-child {
+    border: none;
+}
+
+#user-card .stats {
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+#user-card .stats a:hover {
+    text-decoration: none;
+}
+
+#user-card .stats a:hover .number-stats {
+    color: #cc1717;
 }
