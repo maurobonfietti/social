@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 //import {Router, ActivatedRoute, Params} from '@angular/router';
 import {UserService} from '../../services/user.service';
 import {GLOBAL} from '../../services/global';
+import {Publication} from '../../models/publication';
 
 @Component({
     selector: 'sidebar',
@@ -13,7 +14,8 @@ export class SidebarComponent implements OnInit {
     public identity;
     public token;
     public stats;
-//    public status;
+    public status;
+    public publication: Publication;
 
     constructor(
         private _userService: UserService
@@ -23,13 +25,15 @@ export class SidebarComponent implements OnInit {
         this.token = this._userService.getToken();
 //        this.stats = this._userService.getStats();
         this.stats = JSON.parse(localStorage.getItem('stats'));
+        
+        this.publication = new Publication("", "", "", "", this.identity._id);
     }
 
     ngOnInit() {
         console.log('Componente sidebar cargado.');
-//        console.log(this.url);
-//        console.log(this.identity);
-//        console.log(this.token);
-//        console.log(this.stats);
+    }
+
+    onSubmit() {
+        console.log(this.publication);
     }
 }
