@@ -177,3 +177,8 @@
 #user-card .stats a:hover .number-stats {
     color: #cc1717;
 }
+
+/*timeline*/
+#publications {
+    min-height: 500px;
+}
