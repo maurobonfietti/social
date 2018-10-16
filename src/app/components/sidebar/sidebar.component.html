@@ -54,8 +54,13 @@
 <!-- ...publications... -->
 <div id="new-publication" class="col-lg-4 pull-left panel panel-default">
     <!--<h3>Crear publicación</h3>-->
-    
-    <form #newPubForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-10">
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Publicado correctamente
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        No se pudo publicar
+    </div>
+    <form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm)" class="col-lg-10">
         <p>
             <label>Que estas pensando hoy?</label>
             <textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required></textarea>
