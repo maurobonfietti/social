@@ -1,13 +1,19 @@
 <div class="col-lg-8">
     <h1 class="h1-strong">{{title}}</h1>
     <div id="publications">
-        <div *ngFor="let publication of publications" class="item-publication">
+        <div class="item-publication" *ngFor="let publication of publications">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h4>{{publication.user.name + ' '+ publication.user.surname}}</h4>
-                    <div class="publication-text pull-left">
-                        {{publication.text}}
+                    <div class="image-user pull-left">
+                        <a href="#">
+                            <img src="{{url + 'get-image-user/' + publication.user.image}}" *ngIf="publication.user.image" />
+                            <img src="assets/user.png" *ngIf="!publication.user.image" />
+                        </a>
                     </div>
+                    <div class="username">{{publication.user.name + ' '+ publication.user.surname}}</div>
+                    <h4 class="publication-text pull-left">
+                        {{publication.text}}
+                    </h4>
                 </div>
             </div>
         </div>
