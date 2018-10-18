@@ -25,8 +25,9 @@ export class SidebarComponent implements OnInit {
         this.url = GLOBAL.url;
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
-//        this.stats = this._userService.getStats();
-        this.stats = JSON.parse(localStorage.getItem('stats'));
+        this.stats = this._userService.getStats();
+//        this.stats = JSON.parse(localStorage.getItem('stats'));
+//        console.log(this.stats);
 
         this.publication = new Publication("", "", "", "", this.identity._id);
     }
