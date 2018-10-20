@@ -54,6 +54,7 @@ export class TimelineComponent implements OnInit {
                         var arrayA = this.publications;
                         var arrayB = response.publications;
                         this.publications = arrayA.concat(arrayB);
+                        $("html, body").animate({scrollTop: $('body').prop("scrollHeight")}, 500);
                     }
                     if (page > this.pages) {
                         this._router.navigate(['/home']);
