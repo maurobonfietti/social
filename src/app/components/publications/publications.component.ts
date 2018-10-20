@@ -6,11 +6,11 @@ import {UserService} from '../../services/user.service';
 import {PublicationService} from '../../services/publication.service';
 
 @Component({
-    selector: 'timeline',
-    templateUrl: './timeline.component.html',
+    selector: 'publications',
+    templateUrl: './publications.component.html',
     providers: [UserService, PublicationService]
 })
-export class TimelineComponent implements OnInit {
+export class PublicationsComponent implements OnInit {
     public identity;
     public token;
     public title: string;
@@ -28,7 +28,7 @@ export class TimelineComponent implements OnInit {
         private _userService: UserService,
         private _publicationService: PublicationService
     ) {
-        this.title = 'Timeline';
+        this.title = 'Publicaciones';
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
         this.url = GLOBAL.url;
@@ -36,7 +36,7 @@ export class TimelineComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente timeline cargado.');
+        console.log('Componente publications cargado.');
         this.getPublications(this.page);
     }
 
@@ -83,10 +83,5 @@ export class TimelineComponent implements OnInit {
             this.page += 1;
         }
         this.getPublications(this.page, true);
-    }
-
-    refresh(event) {
-//        console.log(event);
-        this.getPublications(1);
     }
 }
