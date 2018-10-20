@@ -10,7 +10,15 @@
                             <img src="assets/user.png" *ngIf="!publication.user.image" />
                         </a>
                     </div>
-                    <div class="username">{{publication.user.name + ' '+ publication.user.surname}}</div>
+                    <div>
+                        <span class="username">
+                            {{publication.user.name + ' '+ publication.user.surname}}
+                        </span>
+                        &nbsp;|&nbsp;
+                        <span class="date">
+                            {{ (publication.created_at | amFromUnix) | amLocale: 'es' | amTimeAgo }}
+                        </span>
+                    </div>
                     <h4 class="publication-text pull-left">
                         {{publication.text}}
                     </h4>
