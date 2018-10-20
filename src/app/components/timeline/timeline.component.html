@@ -1,5 +1,8 @@
 <div class="col-lg-8">
     <h1 class="h1-strong">{{title}}</h1>
+    <p>
+        <button class="btn btn-success btn-sm" (click)="refresh($event)">Mostrar nuevas</button>
+    </p>
     <div id="publications">
         <div class="item-publication" *ngFor="let publication of publications">
             <div class="panel panel-default">
