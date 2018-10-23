@@ -178,11 +178,16 @@
     color: #cc1717;
 }
 
-/*timeline*/
+/* Timeline */
 #publications {
     min-height: 500px;
 }
 
 #publications .date {
     color: gray;
+}
+
+/* Profile */
+#data-profile {
+    min-height: 500px;
 }
