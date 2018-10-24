@@ -35,5 +35,45 @@ export class ProfileComponent implements OnInit {
 
     ngOnInit() {
         console.log('Componente profile cargado.');
+        this.loadPage();
+    }
+
+    loadPage() {
+        this._route.params.subscribe(
+            params => {
+                let id = params['id'];
+                this.getUser(id);
+                this.getCounter(id);
+            }
+        );
+    }
+
+    getUser(id) {
+        this._userService.getUser(id).subscribe(
+            response => {
+//                console.log(response);
+                if (response.user) {
+                    this.user = response.user;
+                } else {
+                    this.status = 'error';
+                }
+            },
+            error => {
+                console.log(<any>error);
+                this._router.navigate(['/perfil', this.identity._id]);
+            }
+        );
+    }
+
+    getCounter(id) {
+        this._userService.getCounter(id).subscribe(
+            response => {
+//                console.log(response);
+                this.stats = response;
+            },
+            error => {
+                console.log(<any>error);
+            }
+        );
     }
 }
