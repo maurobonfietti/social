@@ -8,13 +8,29 @@
             <img src="assets/user.png" *ngIf="!user.image"/>
         </div>
         <div class="user-name pull-left">
-            <p class="name">
-                {{user.name + ' ' + user.surname}}
-            </p>
-            <p class="nick">
-                {{user.nick}}
-            </p>
+            <div class="label label-default pull-left" *ngIf="followed">
+                Te Sigue
+            </div>
+            <div class="clearfix"></div>
+            <div class="pull-left">
+                <p class="name">
+                    {{user.name + ' ' + user.surname}}
+                </p>
+                <p class="nick">
+                    {{user.nick}}
+                </p>
+            </div>
+            <div class="clearfix"></div>
+            <div class="follow pull-left">
+                <button class="btn btn-success" *ngIf="!following" (click)="followUser(user._id)">
+                    Seguir
+                </button>
+                <button class="btn btn-primary" *ngIf="following" (click)="unfollowUser(user._id)">
+                    Dejar de seguir
+                </button>
+            </div>
         </div>
+
     </div>
 </div>
 <sidebar></sidebar>
