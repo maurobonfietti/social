@@ -46,7 +46,38 @@
                 </button>
             </div>
         </div>
-
+        <div class="stats pull-left" *ngIf="stats">
+            <div class="following-data">
+                <a href="#">
+                    <span class="label-stats">
+                        Siguiendo
+                    </span>
+                    <span class="number-stats">
+                        {{stats.following}}
+                    </span>
+                </a>
+            </div>
+            <div class="following-data">
+                <a href="#">
+                    <span class="label-stats">
+                        Seguidores
+                    </span>
+                    <span class="number-stats">
+                        {{stats.followed}}
+                    </span>
+                </a>
+            </div>
+            <div class="following-data">
+                <a href="#">
+                    <span class="label-stats">
+                        Publicaciones
+                    </span>
+                    <span class="number-stats">
+                        {{stats.publications}}
+                    </span>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 <sidebar></sidebar>

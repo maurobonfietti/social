@@ -225,3 +225,16 @@
     font-weight: normal;
     color: gray;
 }
+
+#data-profile .stats {
+    border-left: 2px solid #ccc;
+    margin-left: 35px;
+    padding-left: 25px;
+    height: 200px;
+}
+
+#data-profile .stats a {
+    font-size: 20px;
+    line-height: 35px;
+    color: #555;
+}
