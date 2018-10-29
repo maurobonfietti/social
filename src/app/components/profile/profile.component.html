@@ -78,6 +78,9 @@
                 </a>
             </div>
         </div>
+        <div class="col-lg-12" *ngIf="user">
+            <publications [user]="user._id"></publications>
+        </div>
     </div>
 </div>
 <sidebar></sidebar>
