@@ -8,7 +8,7 @@
         <img src="assets/user.png" *ngIf="!identity.image"/>
     </div>
     <div class="name-surname pull-left">
-        <a href="#">
+        <a [routerLink]="['/perfil', identity._id]">
             {{identity.name + ' ' + identity.surname}}
         </a>
         <p class="nickame">
