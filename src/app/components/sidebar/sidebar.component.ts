@@ -47,15 +47,21 @@ export class SidebarComponent implements OnInit {
                 if (response.publication) {
 //                    this.publication = response.publication;
                     // upload image
-                    this._uploadService
-                        .makeFileRequest(this.url + 'upload-image-pub/' + response.publication._id, [], this.filesToUpload, this.token, 'image')
-                        .then((result: any) => {
-                            console.log(result);
-                            this.publication.file = result.image;
-                            this.status = 'success';
-                            form.reset();
-                            this._router.navigate(['/timeline']);
+                    if (this.filesToUpload) {
+                        this._uploadService
+                            .makeFileRequest(this.url + 'upload-image-pub/' + response.publication._id, [], this.filesToUpload, this.token, 'image')
+                            .then((result: any) => {
+                                console.log(result);
+                                this.publication.file = result.image;
+                                this.status = 'success';
+                                form.reset();
+                                this._router.navigate(['/timeline']);
                         });
+                    } else {
+                        this.status = 'success';
+                        form.reset();
+                        this._router.navigate(['/timeline']);
+                    }
                 } else {
                     this.status = 'error';
                 }
