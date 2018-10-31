@@ -25,6 +25,23 @@
                     <h4 class="publication-text pull-left">
                         {{publication.text}}
                     </h4>
+                    <div class="col-lg-12" *ngIf="publication.file != 'null'">
+                        <button class="btn btn-warning pull-right" 
+                            (click)="showThisImage(publication._id)"
+                            *ngIf="showImage != publication._id"
+                        >
+                            <span class="glyphicon glyphicon-picture"></span>
+                        </button>
+                        <button class="btn btn-danger pull-right" 
+                            (click)="hideThisImage(publication._id)"
+                            *ngIf="showImage == publication._id"
+                        >
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                        </button>
+                    </div>
+                    <div class="col-lg-12" *ngIf="publication.file != 'null' && showImage == publication._id">
+                        <img src="{{ url + 'get-image-pub/' + publication.file }}" class="col-lg-12 "/>
+                    </div>
                 </div>
             </div>
         </div>
