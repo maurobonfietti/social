@@ -19,7 +19,7 @@
     <div class="clearfix"></div>
     <div class="stats" *ngIf="stats">
         <div class="following-data">
-            <a href="#">
+            <a [routerLink]="['/siguiendo', identity._id, 1]">
                 <span class="label-stats">
                     Siguiendo
                 </span>
