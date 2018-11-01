@@ -24,6 +24,7 @@ export class FollowingComponent implements OnInit {
     public users: User[];
     public follows;
     public status: string;
+    public userPageId;
 
     constructor(
         private _route: ActivatedRoute,
@@ -31,7 +32,7 @@ export class FollowingComponent implements OnInit {
         private _userService: UserService,
         private _followService: FollowService
     ) {
-        this.title = 'Gente';
+        this.title = 'Seguidos';
         this.url = GLOBAL.url;
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
@@ -46,15 +47,16 @@ export class FollowingComponent implements OnInit {
 
     actualPage() {
         this._route.params.subscribe(params => {
-            let id = params['id'];
+            let user_id = params['id'];
+            this.userPageId = user_id;
 
             let page = +params['page'];
             this.page = page;
-            
+
             if (!params['page']) {
                 page = 1;
             }
-            
+
             if (!page) {
                 page = 1;
             } else {
@@ -65,28 +67,29 @@ export class FollowingComponent implements OnInit {
                     this.prev_page = 1;
                 }
             }
-            
-            this.getFollows(id, page);
+
+            this.getFollows(user_id, page);
         });
     }
 
     getFollows(user_id, page) {
+        console.log('yahora');
         this._followService.getFollowing(this.token, user_id, page).subscribe(
             response => {
                 if (!response.follows) {
                     this.status = 'error';
                 } else {
                     console.log(response);
-//                    this.total = response.total;
-//                    this.users = response.users;
-//                    this.pages = response.pages;
-//                    this.follows = response.user_following;
-////                    console.log(response);
-////                    console.log(this.follows);
-////                    console.log(page);
-//                    if (page > this.pages) {
-//                        this._router.navigate(['/gente', 1]);
-//                    }
+                    this.total = response.total;
+                    this.following = response.follows;
+                    this.pages = response.pages;
+                    this.follows = response.user_following;
+//                    console.log(response);
+//                    console.log(this.follows);
+//                    console.log(page);
+                    if (page > this.pages) {
+                        this._router.navigate(['/gente', 1]);
+                    }
                 }
             },
             error => {

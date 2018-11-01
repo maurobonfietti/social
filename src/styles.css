@@ -242,3 +242,7 @@
 #data-profile .publications {
     margin-top: 40px;
 }
+
+.people {
+    min-height: 500px;
+}
