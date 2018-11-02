@@ -32,7 +32,7 @@ export class FollowingComponent implements OnInit {
         private _userService: UserService,
         private _followService: FollowService
     ) {
-        this.title = 'Seguidos';
+        this.title = 'Seguidos por';
         this.url = GLOBAL.url;
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
@@ -68,7 +68,8 @@ export class FollowingComponent implements OnInit {
                 }
             }
 
-            this.getFollows(user_id, page);
+//            this.getFollows(user_id, page);
+            this.getUser(user_id, page);
         });
     }
 
@@ -96,6 +97,29 @@ export class FollowingComponent implements OnInit {
                 var errorMessage = <any>error;
                 console.log(errorMessage);
                 
+                if (errorMessage != null) {
+                    this.status = 'error';
+                }
+            }
+        );
+    }
+
+    public user: User;
+
+    getUser(userId, page) {
+        this._userService.getUser(userId).subscribe(
+            response => {
+                if (response.user) {
+                    this.user = response.user;
+                    this.getFollows(userId, page);
+                } else {
+                    this._router.navigate(['/home']);
+                }
+            },
+            error => {
+                var errorMessage = <any>error;
+                console.log(errorMessage);
+
                 if (errorMessage != null) {
                     this.status = 'error';
                 }
