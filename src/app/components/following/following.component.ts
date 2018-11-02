@@ -25,6 +25,7 @@ export class FollowingComponent implements OnInit {
     public follows;
     public status: string;
     public userPageId;
+    public following;
 
     constructor(
         private _route: ActivatedRoute,
