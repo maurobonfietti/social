@@ -33,7 +33,7 @@ export class FollowService {
 
         var url = this.url + 'following';
         if (userId != null) {
-            this.url + 'following/'+userId+'/'+page
+            url = this.url + 'following/'+userId+'/'+page;
         }
         return this._http.get(url, {headers: headers});
     }
@@ -44,7 +44,7 @@ export class FollowService {
 
         var url = this.url + 'followed';
         if (userId != null) {
-            this.url + 'followed/'+userId+'/'+page
+            url = this.url + 'followed/'+userId+'/'+page;
         }
         return this._http.get(url, {headers: headers});
     }
