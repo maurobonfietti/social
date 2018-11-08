@@ -1,12 +1,16 @@
+// Modules
 import * as $ from 'jquery';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-//import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { MomentModule } from 'angular2-moment';
 
+// Module Custom
+import { MessagesModule} from './messages/messages.module';
+
+// Components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -40,7 +44,8 @@ import { FollowedComponent } from './components/followed/followed.component';
     FormsModule,
     routing,
     HttpClientModule,
-    MomentModule
+    MomentModule,
+    MessagesModule
   ],
   providers: [
       appRoutingProviders

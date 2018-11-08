@@ -4,22 +4,22 @@
     </h3>
     <div class="sidebar-admin">
         <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-            <li role="presentation" >
-                <a href="#">Enviar mensaje</a>
+            <li role="presentation" [routerLinkActive]="['active']">
+                <a [routerLink]="['enviar']">Enviar mensaje</a>
+            </li>
+            <li role="presentation" [routerLinkActive]="['active']">
+                <a [routerLink]="['recibidos']">Mensajes recibidos</a>
+            </li>
+            <li role="presentation" [routerLinkActive]="['active']">
+                <a [routerLink]="['enviados']">Mensajes enviados</a>
             </li>
             <li role="presentation" >
-                <a href="#">Mensajes recibidos</a>
-            </li>
-            <li role="presentation" >
-                <a href="#">Mensajes enviados</a>
-            </li>
-            <li role="presentation" >
-                <a href="#">Información</a>
+                <a [routerLink]="['/home']">Información</a>
             </li>
         </ul>
     </div>
 </div>
 
 <div class="col-lg-8">
-    <!-- Components -->
+    <router-outlet></router-outlet>
 </div>
