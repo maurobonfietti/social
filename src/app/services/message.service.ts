@@ -19,7 +19,7 @@ export class MessageService {
         let params = JSON.stringify(message);
         let headers = new HttpHeaders()
             .set('Content-Type', 'application/json')
-            .set('Authorization', this.getToken());
+            .set('Authorization', token);
 
         return this._http.post(this.url + 'message', params, {headers: headers});
     }
@@ -27,7 +27,7 @@ export class MessageService {
     getMyMessages(token, page = 1): Observable<any> {
         let headers = new HttpHeaders()
             .set('Content-Type', 'application/json')
-            .set('Authorization', this.getToken());
+            .set('Authorization', token);
 
         return this._http.get(this.url + 'my-messages/' + page, {headers: headers});
     }
@@ -35,7 +35,7 @@ export class MessageService {
     getEmmitMessages(token, page = 1): Observable<any> {
         let headers = new HttpHeaders()
             .set('Content-Type', 'application/json')
-            .set('Authorization', this.getToken());
+            .set('Authorization', token);
 
         return this._http.get(this.url + 'messages/' + page, {headers: headers});
     }
