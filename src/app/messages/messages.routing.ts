@@ -15,6 +15,7 @@ const messagesRoutes: Routes = [
             {path: 'enviar', component: AddComponent},
             {path: 'recibidos', component: ReceivedComponent},
             {path: 'enviados', component: SendedComponent},
+            {path: 'enviados/:page', component: SendedComponent},
         ]
     },
 ];
