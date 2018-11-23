@@ -4,7 +4,7 @@
     </h3>
     <div class="people" *ngIf="messages">
         <div class="item-user" *ngFor="let message of messages">
-            <div class="panel panel-default">
+            <div class="panel panel-default" *ngIf="message.emitter">
                 <div class="panel-body">
                     <div class="image-user pull-left">
                         <a href="#">
