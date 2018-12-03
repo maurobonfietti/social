@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         console.log('Componente home cargado.');
+        console.log('app version 0.0.1');
     }
 
     onSubmit() {
