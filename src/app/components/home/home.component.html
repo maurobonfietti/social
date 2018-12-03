@@ -3,9 +3,9 @@
         <h1>{{title}}</h1>
         <p> Nueva red social ;-)</p>
         <p>
-            <a href="#" class="btn btn-success btn-lg" role="button">Timeline</a>
-            <a href="#" class="btn btn-primary btn-lg" role="button">Mi perfil</a>
-            <a href="#" class="btn btn-default btn-lg" role="button">Gente</a>
+            <a class="btn btn-success btn-lg" role="button" [routerLink]="['/timeline']" [routerLinkActive]="['active']">Timeline</a>
+            <!--<a class="btn btn-primary btn-lg" role="button" [routerLink]="['/perfil', identity._id]">Mi perfil</a>-->
+            <a class="btn btn-default btn-lg" role="button" [routerLink]="['/gente']" [routerLinkActive]="['active']">Gente</a>
         </p>
     </div>
 </div>
