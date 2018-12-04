@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
         private _router: Router,
         private _userService: UserService
     ) {
-        this.title = 'Identificate';
+        this.title = 'Inicia Sesión';
         this.user = new User("", "", "", "", "", "", "ROLE_USER", "");
     }
 
@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
             response => {
                 localStorage.setItem('stats', JSON.stringify(response));
                 this.status = "success";
-                this._router.navigate(['/']);
+                this._router.navigate(['/home']);
             },
             error => {
                 console.log(<any> error);
