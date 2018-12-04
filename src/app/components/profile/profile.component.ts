@@ -54,7 +54,7 @@ export class ProfileComponent implements OnInit {
     getUser(id) {
         this._userService.getUser(id).subscribe(
             response => {
-                console.log(response);
+//                console.log(response);
                 if (response.user) {
                     this.user = response.user;
                     if (response.following && response.following._id) {
@@ -67,8 +67,8 @@ export class ProfileComponent implements OnInit {
                     } else {
                         this.followed = false;
                     }
-                    console.log(this.following);
-                    console.log(this.followed);
+//                    console.log(this.following);
+//                    console.log(this.followed);
                 } else {
                     this.status = 'error';
                 }

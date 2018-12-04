@@ -41,7 +41,7 @@ export class FollowingComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.identity);
+//        console.log(this.identity);
         console.log('Componente following cargado.');
         this.actualPage();
     }
@@ -75,13 +75,12 @@ export class FollowingComponent implements OnInit {
     }
 
     getFollows(user_id, page) {
-        console.log('yahora');
         this._followService.getFollowing(this.token, user_id, page).subscribe(
             response => {
                 if (!response.follows) {
                     this.status = 'error';
                 } else {
-                    console.log(response);
+//                    console.log(response);
                     this.total = response.total;
                     this.following = response.follows;
                     this.pages = response.pages;
@@ -97,7 +96,6 @@ export class FollowingComponent implements OnInit {
             error => {
                 var errorMessage = <any>error;
                 console.log(errorMessage);
-                
                 if (errorMessage != null) {
                     this.status = 'error';
                 }
@@ -120,7 +118,6 @@ export class FollowingComponent implements OnInit {
             error => {
                 var errorMessage = <any>error;
                 console.log(errorMessage);
-
                 if (errorMessage != null) {
                     this.status = 'error';
                 }
@@ -152,7 +149,6 @@ export class FollowingComponent implements OnInit {
             error => {
                 var errorMessage = <any>error;
                 console.log(errorMessage);
-
                 if (errorMessage != null) {
                     this.status = 'error';
                 }
@@ -171,7 +167,6 @@ export class FollowingComponent implements OnInit {
             error => {
                 var errorMessage = <any>error;
                 console.log(errorMessage);
-
                 if (errorMessage != null) {
                     this.status = 'error';
                 }
