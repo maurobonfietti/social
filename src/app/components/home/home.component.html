@@ -2,7 +2,7 @@
     <div class="jumbotron">
         <h1>{{title}}</h1>
         <p> Nueva red social ;-)</p>
-        <p>
+        <p *ngIf="identity">
             <a class="btn btn-success btn-lg" role="button" [routerLink]="['/timeline']" [routerLinkActive]="['active']">Timeline</a>
             <!--<a class="btn btn-primary btn-lg" role="button" [routerLink]="['/perfil', identity._id]">Mi perfil</a>-->
             <a class="btn btn-default btn-lg" role="button" [routerLink]="['/gente']" [routerLinkActive]="['active']">Gente</a>
