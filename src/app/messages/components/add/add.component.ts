@@ -42,7 +42,7 @@ export class AddComponent implements OnInit {
     }
 
     onSubmit(form) {
-        console.log(this.message);
+//        console.log(this.message);
         this._messageService.addMessage(this.token, this.message).subscribe(
             response => {
                 if (response.message) {

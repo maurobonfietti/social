@@ -39,7 +39,7 @@ export class UsersComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.identity);
+//        console.log(this.identity);
         console.log('Componente users cargado.');
         this.actualPage();
     }
