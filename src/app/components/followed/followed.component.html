@@ -1,5 +1,5 @@
-<div class="col-lg-5">
-    <h1 class="h1-strong">{{title}} </h1>
+<div class="col-lg-8">
+    <h1 class="h1-strong">{{title}} {{user.name}}</h1>
     <div class="people" *ngIf="followed">
         <div class="item-user" *ngFor="let follow of followed">
             <div class="panel panel-default">
@@ -45,8 +45,8 @@
         </div>
         
         <ul class="pagination pull-right">
-            <li *ngIf="page > 1"><a [routerLink]="['/siguiendo', userPageId, prev_page]">Anterior</a></li>
-            <li *ngIf="pages != page"><a [routerLink]="['/siguiendo', userPageId, next_page]">Siguiente</a></li>
+            <li *ngIf="page > 1"><a [routerLink]="['/seguidores', userPageId, prev_page]">Anterior</a></li>
+            <li *ngIf="pages != page"><a [routerLink]="['/seguidores', userPageId, next_page]">Siguiente</a></li>
         </ul>
     </div>
 </div>
