@@ -1,7 +1,7 @@
 <div class="col-lg-8">
     <h1 class="h1-strong">{{title}}</h1>
-    <p>
-        <button class="btn btn-success btn-sm" (click)="refresh($event)">Mostrar nuevas</button>
+    <p class="text-center">
+        <button class="btn btn-success btn-sm" (click)="refresh($event)">Actualizar</button>
     </p>
     <div id="publications">
         <div class="item-publication" *ngFor="let publication of publications">
@@ -26,19 +26,9 @@
                         {{publication.text}}
                     </h4>
                     <div class="pull-right" *ngIf="publication.user._id == identity._id">
-<!--                        <button class="btn btn-danger pull-right" 
-                            (click)="showThisImage(publication._id)"
-                            *ngIf="showImage != publication._id"
-                        >
-                            <span class="glyphicon glyphicon-trash"></span>
-                        </button>-->
-                        <!-- Button HTML (to Trigger Modal) -->
-                        <a href="#myModal{{publication._id}}" role="button" class="btn btn-large btn-danger" 
-                            data-toggle="modal" *ngIf="showImage != publication._id"
-                        >
+                        <a href="#myModal{{publication._id}}" role="button" class="btn btn-large btn-danger" data-toggle="modal" *ngIf="showImage != publication._id">
                             <span class="glyphicon glyphicon-trash"></span>
                         </a>
-                        <!-- Modal HTML -->
                         <div id="myModal{{publication._id}}" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -47,9 +37,8 @@
                                         <h4 class="modal-title">¿Eliminar realmente la publicación?</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Si la borrás no podrás eliminarla</p>
-                                        <p>{{publication.text}}</p>
-<!--                                        <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>-->
+                                        <p>Si la borrás no podrás deshacer la operación.</p>
+                                        <!--<p>{{publication.text}}</p>-->
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
@@ -63,16 +52,10 @@
                         &nbsp;
                     </div>
                     <div class="pull-right" *ngIf="publication.file != 'null'">
-                        <button class="btn btn-warning pull-right" 
-                            (click)="showThisImage(publication._id)"
-                            *ngIf="showImage != publication._id"
-                        >
+                        <button class="btn btn-warning pull-right" (click)="showThisImage(publication._id)" *ngIf="showImage != publication._id">
                             <span class="glyphicon glyphicon-picture"></span>
                         </button>
-                        <button class="btn btn-danger pull-right" 
-                            (click)="hideThisImage(publication._id)"
-                            *ngIf="showImage == publication._id"
-                        >
+                        <button class="btn btn-danger pull-right" (click)="hideThisImage(publication._id)" *ngIf="showImage == publication._id">
                             <span class="glyphicon glyphicon-remove-circle"></span>
                         </button>
                     </div>
