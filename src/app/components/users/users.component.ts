@@ -23,6 +23,7 @@ export class UsersComponent implements OnInit {
     public pages;
     public users: User[];
     public follows;
+    public follow_me;
     public status: string;
 
     constructor(
@@ -78,6 +79,8 @@ export class UsersComponent implements OnInit {
                     this.users = response.users;
                     this.pages = response.pages;
                     this.follows = response.user_following;
+                    this.follow_me = response.user_follow_me;
+//                    console.log(this.follow_me);
 //                    console.log(response);
 //                    console.log(this.follows);
 //                    console.log(page);
