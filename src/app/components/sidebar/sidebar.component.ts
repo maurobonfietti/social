@@ -38,6 +38,27 @@ export class SidebarComponent implements OnInit {
 
     ngOnInit() {
         console.log('Componente sidebar cargado.');
+        this.loadPage();
+    }
+
+    loadPage() {
+        this._route.params.subscribe(
+            params => {
+                this.getCounter(params['id']);
+            }
+        );
+    }
+
+    getCounter(id) {
+        this._userService.getCounter(id).subscribe(
+            response => {
+//                console.log(response);
+                this.stats = response;
+            },
+            error => {
+                console.log(<any>error);
+            }
+        );
     }
 
     onSubmit(form, event) {
