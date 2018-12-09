@@ -18,11 +18,11 @@
                                 {{message.emitter.name + ' ' + message.emitter.surname}}
                             </a>
                             &nbsp;|&nbsp;
-                            <span class="nickame">
+                            <span class="nickname">
                                 {{message.emitter.nick}}
                             </span>
                             &nbsp;|&nbsp;
-                            <span class="date nickame">
+                            <span class="date nickname">
                                 {{ (message.created_at | amFromUnix) | amLocale: 'es' | amTimeAgo }}
                             </span>
                         </p>

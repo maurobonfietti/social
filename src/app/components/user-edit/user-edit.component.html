@@ -10,30 +10,30 @@
         <p>
             <label>Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required />
-            <span *ngIf="!name.valid && name.touched" >El nombre es obligatorio!</span>
+            <span *ngIf="!name.value && name.touched" >El nombre es obligatorio!</span>
         </p>
         <p>
             <label>Apellido</label>
             <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required />
-            <span *ngIf="!surname.valid && surname.touched" >El apellido es obligatorio!</span>
+            <span *ngIf="!surname.value && surname.touched" >El apellido es obligatorio!</span>
         </p>
         <p>
             <label>Apodo</label>
             <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required />
-            <span *ngIf="!nick.valid && nick.touched" >El apodo es obligatorio!</span>
+            <span *ngIf="!nick.value && nick.touched" >El apodo es obligatorio!</span>
         </p>
         <p>
-            <label>Email</label>
+            <label>Correo electrónico</label>
             <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
-            <span *ngIf="!email.valid && email.touched" >El email no es correcto!</span>
+            <span *ngIf="!email.value && email.touched" >El email no es correcto!</span>
         </p>
-        <div *ngIf="user.image">
+        <div class="user-image-for-edit" *ngIf="user.image">
             <img src="{{ url + 'get-image-user/' + user.image}}" />
         </div>
         <p>
             <label>Imagen</label>
             <input type="file" placeholder="Upload image" (change)="fileChangeEvent($event)" />
         </p>
-        <input type="submit" value="{{title}}" class="btn btn-warning" [disabled]="!userEditForm.form.valid">
+        <input type="submit" value="{{title}}" class="btn btn-warning" [disabled]="!userEditForm.form.valid" />
     </form>
 </div>

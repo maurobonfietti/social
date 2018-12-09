@@ -7,7 +7,7 @@
                     <div class="image-user pull-left">
                         <a [routerLink]="['/perfil', user._id]">
                             <img src="{{url + 'get-image-user/' + user.image}}" *ngIf="user.image" />
-                            <img src="assets/user.png" *ngIf="!user.image" />
+                            <img src="assets/user.png" class="avatar-default" *ngIf="!user.image" />
                         </a>
                     </div>
                     <div class="username pull-left">

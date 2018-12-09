@@ -49,6 +49,7 @@ export class PublicationsComponent implements OnInit {
                     this.total = response.total_items;
                     this.pages = response.pages;
                     this.itemsPerPage = response.item_per_page;
+                    //this.itemsPerPage = response.items_per_page;
                     if (!adding) {
                         this.publications = response.publications;
                     } else {
@@ -58,7 +59,7 @@ export class PublicationsComponent implements OnInit {
                         $("html, body").animate({scrollTop: $('html').prop("scrollHeight")}, 500);
                     }
                     if (page > this.pages) {
-                        this._router.navigate(['/home']);
+                        //this._router.navigate(['/home']);
                     }
                 } else {
                     this.status = 'error';
@@ -78,7 +79,7 @@ export class PublicationsComponent implements OnInit {
 
     viewMore() {
         this.page += 1;
-        if (this.page == this.total) {
+        if (this.page == this.pages) {
             this.noMore = true;
         }
         this.getPublications(this.user, this.page, true);

@@ -59,7 +59,7 @@ export class SidebarComponent implements OnInit {
                 if (response.publication) {
 //                    this.publication = response.publication;
                     // upload image
-                    if (this.filesToUpload) {
+                    if (this.filesToUpload && this.filesToUpload.length) {
                         this._uploadService
                             .makeFileRequest(this.url + 'upload-image-pub/' + response.publication._id, [], this.filesToUpload, this.token, 'image')
                             .then((result: any) => {
@@ -91,7 +91,7 @@ export class SidebarComponent implements OnInit {
         );
     }
 
-    @Output() sended = new EventEmitter;
+    @Output() sended = new EventEmitter();
 
     sendPublication(event) {
 //        console.log(event);

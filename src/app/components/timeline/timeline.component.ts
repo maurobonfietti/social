@@ -54,7 +54,7 @@ export class TimelineComponent implements OnInit {
                         var arrayA = this.publications;
                         var arrayB = response.publications;
                         this.publications = arrayA.concat(arrayB);
-                        $("html, body").animate({scrollTop: $('html').prop("scrollHeight")}, 500);
+                        $("html, body").animate({scrollTop: $('body').prop("scrollHeight")}, 500);
                     }
                     if (page > this.pages) {
                         this._router.navigate(['/home']);
@@ -78,7 +78,7 @@ export class TimelineComponent implements OnInit {
 
     viewMore() {
         this.page += 1;
-        if (this.page == this.total) {
+        if (this.page == this.pages) {
             this.noMore = true;
         }
         this.getPublications(this.page, true);
@@ -98,7 +98,7 @@ export class TimelineComponent implements OnInit {
 
     deletePublication(id) {
         this._publicationService.deletePublication(this.token, id).subscribe(
-            resopnse => {
+            response => {
                 this.refresh();
             },
             error => {
