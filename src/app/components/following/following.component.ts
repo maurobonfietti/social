@@ -44,6 +44,7 @@ export class FollowingComponent implements OnInit {
 //        console.log(this.identity);
         console.log('Componente following cargado.');
         this.actualPage();
+//        console.log(this.identity);
     }
 
     actualPage() {
