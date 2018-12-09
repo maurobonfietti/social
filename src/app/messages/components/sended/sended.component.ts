@@ -48,11 +48,11 @@ export class SendedComponent implements OnInit {
 
     actualPage() {
         this._route.params.subscribe(params => {
-            let user_id = params['id'];
+            //let user_id = params['id'];
 //            this.userPageId = user_id;
 
             let page = +params['page'];
-            this.page = page;
+            //this.page = page;
 
             if (!params['page']) {
                 page = 1;
@@ -71,6 +71,9 @@ export class SendedComponent implements OnInit {
 
 //            this.getFollows(user_id, page);
 //            this.getUser(user_id, page);
+
+            this.page = page;
+
             this.getMessages(this.token, this.page);
         });
     }

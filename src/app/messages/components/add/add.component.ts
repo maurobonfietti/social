@@ -49,7 +49,7 @@ export class AddComponent implements OnInit {
                     this.status = 'success';
                     form.reset();
                 }
-                this.follows = response.follows;
+                // this.follows = response.follows;
             },
             error => {
                 this.status = 'error';

@@ -85,6 +85,7 @@ export class FollowingComponent implements OnInit {
                     this.following = response.follows;
                     this.pages = response.pages;
                     this.follows = response.user_following;
+//                    this.follows = response.user_following;
 //                    console.log(response);
 //                    console.log(this.follows);
 //                    console.log(page);
