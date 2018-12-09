@@ -57,7 +57,7 @@ export class TimelineComponent implements OnInit {
                         $("html, body").animate({scrollTop: $('body').prop("scrollHeight")}, 500);
                     }
                     if (page > this.pages) {
-                        this._router.navigate(['/home']);
+                        //this._router.navigate(['/home']);
                     }
                 } else {
                     this.status = 'error';
