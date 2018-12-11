@@ -16,7 +16,7 @@
                                 {{follow.followed.name + ' ' + follow.followed.surname}}
                             </a>
                         </p>
-                        <p class="nickame">
+                        <p class="nickname">
                             {{follow.followed.nick}}
                         </p>
                     </div>
@@ -43,7 +43,6 @@
                 </div>
             </div>
         </div>
-        
         <ul class="pagination pull-right">
             <li *ngIf="page > 1"><a [routerLink]="['/siguiendo', userPageId, prev_page]">Anterior</a></li>
             <li *ngIf="pages != page"><a [routerLink]="['/siguiendo', userPageId, next_page]">Siguiente</a></li>

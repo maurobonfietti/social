@@ -16,7 +16,7 @@
                                 {{user.name + ' ' + user.surname}}
                             </a>
                         </p>
-                        <p class="nickame">
+                        <p class="nickname">
                             {{user.nick}}
                         </p>
                     </div>
@@ -27,9 +27,6 @@
                         <button class="btn btn-secondary disabled" *ngIf="follow_me.indexOf(user._id) >= 0">
                             Te sigue
                         </button>
-<!--                        <div class="label label-default pull-right" *ngIf="follow_me.indexOf(user._id) >= 0">
-                            Te Sigue
-                        </div>-->
                         <button class="btn btn-success" *ngIf="follows.indexOf(user._id) < 0" (click)="followUser(user._id)">
                             <span class="glyphicon glyphicon-plus-sign"></span> Seguir
                         </button>
@@ -45,7 +42,6 @@
                 </div>
             </div>
         </div>
-        
         <ul class="pagination pull-right">
             <li *ngIf="page > 1"><a [routerLink]="['/gente', prev_page]">Anterior</a></li>
             <li *ngIf="pages != page"><a [routerLink]="['/gente', next_page]">Siguiente</a></li>

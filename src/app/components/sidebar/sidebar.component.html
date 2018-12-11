@@ -1,7 +1,6 @@
 <div class="col-lg-4 sidebar-32">
     <h1 class="h1-strong">Hola, {{identity.name}}</h1>
 </div>
-
 <div id="user-card" class="col-lg-4 panel panel-default pull-left">
     <div class="avatar pull-left">
         <img src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image"/>
@@ -11,7 +10,7 @@
         <a [routerLink]="['/perfil', identity._id]" class="username">
             {{identity.name + ' ' + identity.surname}}
         </a>
-        <p class="nickame">
+        <p class="nickname">
             {{identity.nick}}
         </p>
         <div class="clearfix"></div>
@@ -50,10 +49,7 @@
         </div>
     </div>
 </div>
-
-<!-- ...publications... -->
 <div id="new-publication" class="col-lg-4 pull-left panel panel-default">
-    <!--<h3>Crear publicación</h3>-->
     <div class="alert alert-success" *ngIf="status == 'success'">
         Publicado correctamente
     </div>
