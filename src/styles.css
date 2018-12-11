@@ -18,7 +18,8 @@
 
 .navigation .navbar {
     border-radius: 0px !important;
-    background: #e53c37 !important;
+    /*background: #e53c37 !important;*/
+    background: #286090 !important;
     border: none;
 }
 
