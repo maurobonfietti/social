@@ -42,14 +42,12 @@ export class AddComponent implements OnInit {
     }
 
     onSubmit(form) {
-//        console.log(this.message);
         this._messageService.addMessage(this.token, this.message).subscribe(
             response => {
                 if (response.message) {
                     this.status = 'success';
                     form.reset();
                 }
-                // this.follows = response.follows;
             },
             error => {
                 this.status = 'error';
