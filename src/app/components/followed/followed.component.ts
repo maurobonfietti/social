@@ -111,6 +111,7 @@ export class FollowedComponent implements OnInit {
             response => {
                 if (response.user) {
                     this.user = response.user;
+//                    console.log(this.user);
                     this.getFollows(userId, page);
                 } else {
                     this._router.navigate(['/home']);

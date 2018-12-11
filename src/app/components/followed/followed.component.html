@@ -1,5 +1,5 @@
 <div class="col-lg-8">
-    <h1 class="h1-strong">{{title}} {{identity.name}}</h1>
+    <h1 class="h1-strong" *ngIf="user">{{title}} {{user.name}}</h1>
     <div class="people" *ngIf="followed">
         <div class="item-user" *ngFor="let follow of followed">
             <div class="panel panel-default">
