@@ -12,6 +12,7 @@ import { MainComponent } from './components/main/main.component';
 import { AddComponent } from './components/add/add.component';
 import { ReceivedComponent } from './components/received/received.component';
 import { SendedComponent } from './components/sended/sended.component';
+import { ConversationComponent } from './components/conversation/conversation.component';
 
 // Services
 import {UserService} from '../services/user.service';
@@ -22,7 +23,8 @@ import {UserGuard} from '../services/user.guard';
     MainComponent,
     AddComponent,
     ReceivedComponent,
-    SendedComponent
+    SendedComponent,
+    ConversationComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import {UserGuard} from '../services/user.guard';
     MainComponent,
     AddComponent,
     ReceivedComponent,
-    SendedComponent
+    SendedComponent,
+    ConversationComponent
   ],
   providers: [
     UserService,
