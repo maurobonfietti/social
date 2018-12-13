@@ -7,14 +7,14 @@
             <div class="panel panel-default" *ngIf="message.emitter">
                 <div class="panel-body">
                     <div class="image-user pull-left">
-                        <a href="#">
+                        <a [routerLink]="['/perfil', message.receiver._id]">
                             <img src="{{url + 'get-image-user/' + message.receiver.image}}" *ngIf="message.receiver.image" />
                             <img src="assets/user.png" *ngIf="!message.receiver.image" />
                         </a>
                     </div>
                     <div class="username pull-left">
                         <p class="name-surname">
-                            <a [routerLink]="['/perfil', message.emitter._id]">
+                            <a [routerLink]="['/perfil', message.receiver._id]">
                                 {{message.receiver.name + ' ' + message.receiver.surname}}
                             </a>
                             &nbsp;|&nbsp;

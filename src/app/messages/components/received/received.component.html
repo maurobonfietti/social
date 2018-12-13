@@ -7,7 +7,7 @@
             <div class="panel panel-default" *ngIf="message.emitter">
                 <div class="panel-body">
                     <div class="image-user pull-left">
-                        <a href="#">
+                        <a [routerLink]="['/perfil', message.emitter._id]">
                             <img src="{{url + 'get-image-user/' + message.emitter.image}}" *ngIf="message.emitter.image" />
                             <img src="assets/user.png" *ngIf="!message.emitter.image" />
                         </a>
