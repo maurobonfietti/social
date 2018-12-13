@@ -1,5 +1,13 @@
 # Social
 
+This repository is a tiny social media of example.
+
+## Application: MEAN Stack
+
+* Frontend: Angular 6. Backend: NodeJS, ExpressJS and MongoDB.
+
+## Project
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
 ## Development server
