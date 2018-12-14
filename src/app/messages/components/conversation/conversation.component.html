@@ -4,7 +4,8 @@
     </h3>
     <div class="people" *ngIf="messages">
         <div class="item-user" *ngFor="let message of messages">
-            <div class="panel panel-default" *ngIf="message.emitter  && message.emitter._id == '5bdca3a0e314de4e63ab0126'">
+<!--            <div class="panel panel-default" *ngIf="message.emitter && message.emitter._id == '5bdca3a0e314de4e63ab0126'">-->
+            <div class="panel panel-default" *ngIf="message.emitter">
                 <div class="panel-body">
                     <div class="image-user pull-left">
                         <a [routerLink]="['/perfil', message.emitter._id]">
