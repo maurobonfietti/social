@@ -69,7 +69,17 @@ export class ConversationComponent implements OnInit {
 
 //            this.getMessages(this.token, this.page);
 //            this.getEmmitMessages(this.token, this.page);
-            this.getConversation(this.token, '5c0f300c70fe425ab22651ea', this.page);
+            
+//            this._route.params.subscribe(
+//                params => {
+//                    let id = params['id'];
+//                    this.getUser(id);
+//                    this.getCounter(id);
+//                }
+//            );
+            let userId = params['userId'];
+            
+            this.getConversation(this.token, userId, this.page);
             
             console.log(this.page);
         });

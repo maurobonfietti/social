@@ -21,8 +21,8 @@ const messagesRoutes: Routes = [
             {path: 'recibidos/:page', component: ReceivedComponent, canActivate:[UserGuard]},
             {path: 'enviados', component: SendedComponent, canActivate:[UserGuard]},
             {path: 'enviados/:page', component: SendedComponent, canActivate:[UserGuard]},
-            {path: 'conversation', component: ConversationComponent, canActivate:[UserGuard]},
-            {path: 'conversation/:page', component: ConversationComponent, canActivate:[UserGuard]},
+            {path: 'conversation/:userId', component: ConversationComponent, canActivate:[UserGuard]},
+            {path: 'conversation/:userId/:page', component: ConversationComponent, canActivate:[UserGuard]},
             {path: 'gente', component: UsersComponent, canActivate:[UserGuard]},
             {path: 'gente/:page', component: UsersComponent, canActivate:[UserGuard]},
         ]

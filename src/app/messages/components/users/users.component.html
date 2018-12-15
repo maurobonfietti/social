@@ -12,7 +12,7 @@
                     </div>
                     <div class="username pull-left">
                         <p class="name-surname">
-                            <a [routerLink]="['/perfil', user._id]">
+                            <a [routerLink]="['/mensajes/conversation', user._id]">
                                 {{user.name + ' ' + user.surname}}
                             </a>
                         </p>
@@ -20,7 +20,7 @@
                             {{user.nick}}
                         </p>
                     </div>
-                    <div class="pull-right" *ngIf="user._id != identity._id">
+<!--                    <div class="pull-right" *ngIf="user._id != identity._id">
                         <button class="btn btn-secondary disabled" *ngIf="follow_me.indexOf(user._id) < 0">
                             No te sigue
                         </button>
@@ -38,13 +38,13 @@
                                 <span class="glyphicon glyphicon-ok-sign"></span> Siguiendo
                             </ng-template>
                         </button>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
         <ul class="pagination pull-right">
-            <li *ngIf="page > 1"><a [routerLink]="['/gente', prev_page]">Anterior</a></li>
-            <li *ngIf="pages != page"><a [routerLink]="['/gente', next_page]">Siguiente</a></li>
+            <li *ngIf="page > 1"><a [routerLink]="['/mensajes/gente', prev_page]">Anterior</a></li>
+            <li *ngIf="pages != page"><a [routerLink]="['/mensajes/gente', next_page]">Siguiente</a></li>
         </ul>
     </div>
 </div>
