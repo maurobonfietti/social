@@ -247,3 +247,7 @@
 .people {
     min-height: 500px;
 }
+
+.panel {
+        margin-bottom: 5px !important;
+}
