@@ -6,6 +6,7 @@ import { AddComponent } from './components/add/add.component';
 import { ReceivedComponent } from './components/received/received.component';
 import { SendedComponent } from './components/sended/sended.component';
 import { ConversationComponent } from './components/conversation/conversation.component';
+import { UsersComponent } from './components/users/users.component';
 
 import {UserGuard} from '../services/user.guard';
 
@@ -22,6 +23,8 @@ const messagesRoutes: Routes = [
             {path: 'enviados/:page', component: SendedComponent, canActivate:[UserGuard]},
             {path: 'conversation', component: ConversationComponent, canActivate:[UserGuard]},
             {path: 'conversation/:page', component: ConversationComponent, canActivate:[UserGuard]},
+            {path: 'gente', component: UsersComponent, canActivate:[UserGuard]},
+            {path: 'gente/:page', component: UsersComponent, canActivate:[UserGuard]},
         ]
     },
 ];

@@ -69,7 +69,7 @@ export class ConversationComponent implements OnInit {
 
 //            this.getMessages(this.token, this.page);
 //            this.getEmmitMessages(this.token, this.page);
-            this.getConversation(this.token, this.page);
+            this.getConversation(this.token, '5c0f300c70fe425ab22651ea', this.page);
             
             console.log(this.page);
         });
@@ -111,8 +111,8 @@ export class ConversationComponent implements OnInit {
         );
     }
 
-    getConversation(token, page) {
-        this._messageService.getConversation(token, page).subscribe(
+    getConversation(token, userId, page) {
+        this._messageService.getConversation(token, userId, page).subscribe(
             response => {
                 if (!response.messages) {
 
