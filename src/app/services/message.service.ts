@@ -39,4 +39,12 @@ export class MessageService {
 
         return this._http.get(this.url + 'messages/' + page, {headers: headers});
     }
+
+    getConversation(token, userId, page = 1): Observable<any> {
+        let headers = new HttpHeaders()
+            .set('Content-Type', 'application/json')
+            .set('Authorization', token);
+
+        return this._http.get(this.url + 'conversation/' + userId + '/' + page, {headers: headers});
+    }
 }

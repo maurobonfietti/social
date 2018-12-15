@@ -1,0 +1,32 @@
+<div class="col-lg-8">
+    <h1 class="h1-strong">{{title}}</h1>
+    <div class="people">
+        <div class="item-user" *ngFor="let user of users">
+            <div class="panel panel-default" *ngIf="follow_me.indexOf(user._id) >= 0">
+                <div class="panel-body">
+                    <div class="image-user pull-left">
+                        <a [routerLink]="['/perfil', user._id]">
+                            <img src="{{url + 'get-image-user/' + user.image}}" *ngIf="user.image" />
+                            <img src="assets/user.png" class="avatar-default" *ngIf="!user.image" />
+                        </a>
+                    </div>
+                    <div class="username pull-left">
+                        <p class="name-surname">
+                            <a [routerLink]="['/mensajes/conversation', user._id]">
+                                {{user.name + ' ' + user.surname}}
+                            </a>
+                        </p>
+                        <p class="nickname">
+                            {{user.nick}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        <ul class="pagination pull-right">
+            <li *ngIf="page > 1"><a [routerLink]="['/mensajes/gente', prev_page]">Anterior</a></li>
+            <li *ngIf="pages != page"><a [routerLink]="['/mensajes/gente', next_page]">Siguiente</a></li>
+        </ul>-->
+    </div>
+</div>
+<div class="clearfix"></div>
