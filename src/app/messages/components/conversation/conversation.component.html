@@ -34,13 +34,13 @@
             </div>
             <div class="panel panel-default" *ngIf="message.emitter && message.emitter._id == identity._id">
                 <div class="panel-body">
-                    <div class="image-user pull-right">
+                    <div class="image-user pull-left">
                         <a [routerLink]="['/perfil', message.emitter._id]">
                             <img src="{{url + 'get-image-user/' + message.emitter.image}}" *ngIf="message.emitter.image" />
                             <img src="assets/user.png" *ngIf="!message.emitter.image" />
                         </a>
                     </div>
-                    <div class="username pull-right">
+                    <div class="username pull-left">
                         <p class="name-surname">
                             <a [routerLink]="['/perfil', message.emitter._id]">
                                 {{message.emitter.name + ' ' + message.emitter.surname}}
