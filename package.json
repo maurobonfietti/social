@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "node server.js",
     "local": "ng serve",
-    "postinstall": "ng build -output-path dist",
+    "postinstall": "ng build --aot --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
