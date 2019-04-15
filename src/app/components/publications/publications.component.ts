@@ -37,7 +37,7 @@ export class PublicationsComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente publications cargado.');
+        console.log('[OK] Component: publications.');
         this.getPublications(this.user, this.page);
     }
 
