@@ -17,10 +17,9 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente home cargado.');
-        console.log('app version 0.0.1');
+        console.log('[OK] Component: home.');
+        console.log('Social App Version: 0.2.0');
         this.identity = this._userService.getIdentity();
-//        console.log(this.identity);
     }
 
     onSubmit() {

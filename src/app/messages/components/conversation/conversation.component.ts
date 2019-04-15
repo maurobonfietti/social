@@ -41,7 +41,7 @@ export class ConversationComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente conversation cargado.');
+        console.log('[OK] Component: conversation.');
         this.actualPage();
     }
 

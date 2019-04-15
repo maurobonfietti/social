@@ -30,14 +30,11 @@ export class SidebarComponent implements OnInit {
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
         this.stats = this._userService.getStats();
-//        this.stats = JSON.parse(localStorage.getItem('stats'));
-//        console.log(this.stats);
-
         this.publication = new Publication("", "", "", "", this.identity._id);
     }
 
     ngOnInit() {
-        console.log('Componente sidebar cargado.');
+        console.log('[OK] Component: sidebar.');
         this.getCounter(this.identity._id);
     }
 
@@ -53,7 +50,6 @@ export class SidebarComponent implements OnInit {
     }
 
     onSubmit(form, event) {
-//        console.log(this.publication);
         this._publicationService.addPublication(this.token, this.publication).subscribe(
             response => {
                 if (response.publication) {
@@ -63,7 +59,6 @@ export class SidebarComponent implements OnInit {
                         this._uploadService
                             .makeFileRequest(this.url + 'upload-image-pub/' + response.publication._id, [], this.filesToUpload, this.token, 'image')
                             .then((result: any) => {
-//                                console.log(result);
                                 this.publication.file = result.image;
                                 this.status = 'success';
                                 form.reset();
@@ -94,7 +89,6 @@ export class SidebarComponent implements OnInit {
     @Output() sended = new EventEmitter();
 
     sendPublication(event) {
-//        console.log(event);
         this.sended.emit({send:'true'});
     }
 
@@ -102,6 +96,5 @@ export class SidebarComponent implements OnInit {
 
     fileChangeEvent(fileInput: any) {
         this.filesToUpload = <Array<File>>fileInput.target.files;
-//        console.log(this.filesToUpload);
     }
 }

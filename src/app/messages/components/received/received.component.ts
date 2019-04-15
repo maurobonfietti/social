@@ -40,7 +40,7 @@ export class ReceivedComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente received cargado.');
+        console.log('[OK] Component: received.');
         this.actualPage();
     }
 
@@ -57,14 +57,13 @@ export class ReceivedComponent implements OnInit {
             } else {
                 this.next_page = page + 1;
                 this.prev_page = page - 1;
-                
+
                 if (this.prev_page <= 0) {
                     this.prev_page = 1;
                 }
             }
 
             this.page = page;
-            console.log(this.page);
 
             this.getMessages(this.token, this.page);
         });

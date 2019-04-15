@@ -37,14 +37,13 @@ export class PublicationsComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente publications cargado.');
+        console.log('[OK] Component: publications.');
         this.getPublications(this.user, this.page);
     }
 
     getPublications(user, page, adding = false) {
         this._publicationService.getPublicationUser(this.token, this.user, page).subscribe(
             response => {
-//                console.log(response);
                 if (response.publications) {
                     this.total = response.total_items;
                     this.pages = response.pages;
