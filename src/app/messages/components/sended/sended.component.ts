@@ -40,7 +40,7 @@ export class SendedComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente sended cargado.');
+        console.log('[OK] Component: sended.');
         this.actualPage();
     }
 

@@ -41,8 +41,7 @@ export class FollowedComponent implements OnInit {
     }
 
     ngOnInit() {
-//        console.log(this.identity);
-        console.log('Componente followed cargado.');
+        console.log('[OK] Component: followed.');
         this.actualPage();
     }
 
@@ -80,15 +79,11 @@ export class FollowedComponent implements OnInit {
                 if (!response.follows) {
                     this.status = 'error';
                 } else {
-//                    console.log(response);
                     this.total = response.total;
                     this.followed = response.follows;
                     this.pages = response.pages;
                     this.follows = response.user_following;
 //                    this.follows = response.users_following;
-//                    console.log(response);
-//                    console.log(this.follows);
-//                    console.log(page);
                     if (page > this.pages) {
                         this._router.navigate(['/gente', 1]);
                     }
@@ -111,7 +106,6 @@ export class FollowedComponent implements OnInit {
             response => {
                 if (response.user) {
                     this.user = response.user;
-//                    console.log(this.user);
                     this.getFollows(userId, page);
                 } else {
                     this._router.navigate(['/home']);

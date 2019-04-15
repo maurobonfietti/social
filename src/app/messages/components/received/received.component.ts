@@ -40,7 +40,7 @@ export class ReceivedComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente received cargado.');
+        console.log('[OK] Component: received.');
         this.actualPage();
     }
 

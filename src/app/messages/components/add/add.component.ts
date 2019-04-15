@@ -37,7 +37,7 @@ export class AddComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente add cargado.');
+        console.log('[OK] Component: add.');
         this.getMyFollows();
     }
 

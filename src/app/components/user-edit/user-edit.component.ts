@@ -32,12 +32,10 @@ export class UserEditComponent implements OnInit {
     }
 
     ngOnInit() {
-//        console.log(this.user);
-        console.log('Componente user-edit cargado.');
+        console.log('[OK] Component: user-edit.');
     }
 
     onSubmit() {
-//        console.log(this.user);
         this._userService.updateUser(this.user).subscribe(
             response => {
                 if (!response.user) {
@@ -69,6 +67,5 @@ export class UserEditComponent implements OnInit {
 
     fileChangeEvent(fileInput: any) {
         this.filesToUpload = <Array<File>>fileInput.target.files;
-//        console.log(this.filesToUpload);
     }
 }

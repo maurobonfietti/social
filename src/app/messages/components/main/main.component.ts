@@ -12,6 +12,6 @@ export class MainComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente main/messages cargado.');
+        console.log('[OK] Component: main-messages.');
     }
 }

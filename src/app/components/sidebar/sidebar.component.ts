@@ -30,9 +30,6 @@ export class SidebarComponent implements OnInit {
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
         this.stats = this._userService.getStats();
-//        this.stats = JSON.parse(localStorage.getItem('stats'));
-//        console.log(this.stats);
-
         this.publication = new Publication("", "", "", "", this.identity._id);
     }
 
@@ -94,7 +91,6 @@ export class SidebarComponent implements OnInit {
     @Output() sended = new EventEmitter();
 
     sendPublication(event) {
-//        console.log(event);
         this.sended.emit({send:'true'});
     }
 
@@ -102,6 +98,5 @@ export class SidebarComponent implements OnInit {
 
     fileChangeEvent(fileInput: any) {
         this.filesToUpload = <Array<File>>fileInput.target.files;
-//        console.log(this.filesToUpload);
     }
 }

@@ -37,7 +37,7 @@ export class TimelineComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente timeline cargado.');
+        console.log('[OK] Component: timeline.');
         this.getPublications(this.page);
     }
 

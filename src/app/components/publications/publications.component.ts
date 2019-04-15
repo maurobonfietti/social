@@ -44,7 +44,6 @@ export class PublicationsComponent implements OnInit {
     getPublications(user, page, adding = false) {
         this._publicationService.getPublicationUser(this.token, this.user, page).subscribe(
             response => {
-//                console.log(response);
                 if (response.publications) {
                     this.total = response.total_items;
                     this.pages = response.pages;
