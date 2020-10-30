@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     constructor(
         private _userService: UserService
     ) {
-        this.title = 'Bienvenido!';
+        this.title = 'Welcome back!';
     }
 
     ngOnInit() {
