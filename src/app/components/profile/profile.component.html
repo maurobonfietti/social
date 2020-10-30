@@ -9,7 +9,7 @@
         </div>
         <div class="user-name pull-left">
             <div class="label label-default pull-left" *ngIf="followed">
-                Te Sigue
+                Following you
             </div>
             <div class="clearfix"></div>
             <div class="pull-left">
@@ -27,7 +27,7 @@
                     *ngIf="!following" 
                     (click)="followUser(user._id)"
                 >
-                    Seguir
+                    Follow
                 </button>
                 <button 
                     class="btn btn-primary" 
@@ -38,10 +38,10 @@
                     [class.btn-danger]="user._id == followUserOver"
                 >
                     <span *ngIf="user._id == followUserOver; else following">
-                        <span class="glyphicon glyphicon-minus-sign"></span> Dejar de seguir
+                        <span class="glyphicon glyphicon-minus-sign"></span> Stop Follow
                     </span>
                     <ng-template #following>
-                        <span class="glyphicon glyphicon-ok-sign"></span> Siguiendo
+                        <span class="glyphicon glyphicon-ok-sign"></span> Following
                     </ng-template>
                 </button>
             </div>
@@ -50,7 +50,7 @@
             <div class="following-data">
                 <a [routerLink]="['/siguiendo', user._id, 1]">
                     <span class="label-stats">
-                        Siguiendo
+                        Following
                     </span>
                     <span class="number-stats">
                         {{stats.following}}
@@ -60,7 +60,7 @@
             <div class="following-data">
                 <a [routerLink]="['/seguidores', user._id, 1]">
                     <span class="label-stats">
-                        Seguidores
+                        Followers
                     </span>
                     <span class="number-stats">
                         {{stats.followed}}
@@ -70,7 +70,7 @@
             <div class="following-data">
                 <a [routerLink]="['/perfil', user._id]">
                     <span class="label-stats">
-                        Publicaciones
+                        Posts
                     </span>
                     <span class="number-stats">
                         {{stats.publications}}
