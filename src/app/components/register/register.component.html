@@ -1,36 +1,36 @@
 <div class="col-lg-5">
     <h1 class="h1-strong">{{title}}</h1>
-    <div class="alert alert-success" *ngIf="status == 'success'">
-        Registro completado correctamente, <a [routerLink]="['/login']">ingresa aqui.</a>
+    <div class="alert alert-success" >
+        User created successfully. <a [routerLink]="['/login']">Login here.</a>
     </div>
     <div class="alert alert-danger" *ngIf="status == 'error'">
-        Error al registrarse. Reintenta mas tarde.
+        Error when you try to register. Try again later.
     </div>
     <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-lg-12">
         <p>
-            <label>Nombre</label>
+            <label>First Name</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required />
-            <span *ngIf="!name.valid && name.touched" >El nombre es obligatorio!</span>
+            <span *ngIf="!name.valid && name.touched" >First name is required.</span>
         </p>
         <p>
-            <label>Apellido</label>
+            <label>Last Name</label>
             <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required />
-            <span *ngIf="!surname.valid && surname.touched" >El apellido es obligatorio!</span>
+            <span *ngIf="!surname.valid && surname.touched" >Last name is required.</span>
         </p>
         <p>
-            <label>Apodo</label>
+            <label>Nickname</label>
             <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required />
-            <span *ngIf="!nick.valid && nick.touched" >El apodo es obligatorio!</span>
+            <span *ngIf="!nick.valid && nick.touched" >Nickname is required.</span>
         </p>
         <p>
             <label>Email</label>
             <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
-            <span *ngIf="!email.valid && email.touched" >El email no es correcto!</span>
+            <span *ngIf="!email.valid && email.touched" >Invalid email.</span>
         </p>
         <p>
             <label>Password</label>
             <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required />
-            <span *ngIf="!password.valid && password.touched" >El password es obligatorio!</span>
+            <span *ngIf="!password.valid && password.touched" >Password is required.</span>
         </p>
         <input type="submit" value="{{title}}" class="btn btn-success" [disabled]="!registerForm.form.valid">
     </form>

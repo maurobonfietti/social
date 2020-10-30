@@ -1,22 +1,22 @@
 <div class="col-lg-5">
     <h1 class="h1-strong">{{title}}</h1>
     <div class="alert alert-success" *ngIf="status == 'success'">
-        Te has identificado correctamente, bienvenido!!
+        Successful login, welcome!
     </div>
     <div class="alert alert-danger" *ngIf="status == 'error'">
-        Error al iniciar sesión, datos incorrectos.
+        Login failed: email or password invalid.
     </div>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
         <p>
             <label>Email</label>
             <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
-            <span *ngIf="!email.valid && email.touched" >El email no es correcto!</span>
+            <span *ngIf="!email.valid && email.touched" >Invalid email.</span>
         </p>
         <p>
-            <label>Contraseña</label>
+            <label>Password</label>
             <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required />
-            <span *ngIf="!password.valid && password.touched" >La Contraseña es obligatoria!</span>
+            <span *ngIf="!password.valid && password.touched" >Password is required.</span>
         </p>
-        <input type="submit" value="Ingresar" class="btn btn-success" [disabled]="!loginForm.form.valid">
+        <input type="submit" value="Login" class="btn btn-success" [disabled]="!loginForm.form.valid">
     </form>
 </div>
