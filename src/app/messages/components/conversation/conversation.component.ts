@@ -34,7 +34,7 @@ export class ConversationComponent implements OnInit {
         private _messageService: MessageService,
         private _userService: UserService,
     ) {
-        this.title = 'Mensajes y conversaciones';
+        this.title = 'Messages and conversations';
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
         this.url = GLOBAL.url;

@@ -34,8 +34,8 @@
             </div>
         </div>
         <ul class="pagination pull-right">
-            <li *ngIf="page > 1 && total > 0"><a [routerLink]="['/mensajes/recibidos', prev_page]">Anterior</a></li>
-            <li *ngIf="pages != page && total > 0"><a [routerLink]="['/mensajes/recibidos', next_page]">Siguiente</a></li>
+            <li *ngIf="page > 1 && total > 0"><a [routerLink]="['/mensajes/recibidos', prev_page]">Prev</a></li>
+            <li *ngIf="pages != page && total > 0"><a [routerLink]="['/mensajes/recibidos', next_page]">Next</a></li>
         </ul>
     </div>
 </div>

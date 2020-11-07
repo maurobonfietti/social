@@ -29,7 +29,7 @@ export class AddComponent implements OnInit {
         private _messageService: MessageService,
         private _userService: UserService,
     ) {
-        this.title = 'Enviar mensaje';
+        this.title = 'Send message';
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
         this.url = GLOBAL.url;

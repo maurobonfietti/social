@@ -20,7 +20,7 @@
         <div class="following-data">
             <a [routerLink]="['/siguiendo', identity._id, 1]">
                 <span class="label-stats">
-                    Siguiendo
+                    Following
                 </span>
                 <span class="number-stats">
                     {{stats.following}}
@@ -30,7 +30,7 @@
         <div class="following-data">
             <a [routerLink]="['/seguidores', identity._id, 1]">
                 <span class="label-stats">
-                    Seguidores
+                    Followers
                 </span>
                 <span class="number-stats">
                     {{stats.followed}}
@@ -40,7 +40,7 @@
         <div class="following-data">
             <a [routerLink]="['/perfil', identity._id]">
                 <span class="label-stats">
-                    Publicaciones
+                    Posts
                 </span>
                 <span class="number-stats">
                     {{stats.publications}}
@@ -51,21 +51,21 @@
 </div>
 <div id="new-publication" class="col-lg-4 pull-left panel panel-default">
     <div class="alert alert-success" *ngIf="status == 'success'">
-        Publicado correctamente
+        Posted correctly
     </div>
     <div class="alert alert-danger" *ngIf="status == 'error'">
-        No se pudo publicar
+        Could not publish
     </div>
     <form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm, $event)" class="col-lg-10">
         <p>
-            <label>Que estas pensando hoy?</label>
+            <label>What are you thinking today?</label>
             <textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required></textarea>
-            <span *ngIf="!text.valid && text.touched">El texto es obligatorio</span>
+            <span *ngIf="!text.valid && text.touched">The text is required</span>
         </p>
         <p>
-            <label>Sube tu foto</label>
+            <label>Upload your photo</label>
             <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)" />
         </p>
-        <input type="submit" value="Enviar" class="btn btn-success" [disabled]="!newPubForm.form.valid" />
+        <input type="submit" value="Send" class="btn btn-success" [disabled]="!newPubForm.form.valid" />
     </form>
 </div>

@@ -1,7 +1,7 @@
 <div class="col-lg-8">
     <h1 class="h1-strong">{{title}}</h1>
     <p class="text-center">
-        <button class="btn btn-success btn-sm" (click)="refresh($event)">Actualizar</button>
+        <button class="btn btn-success btn-sm" (click)="refresh($event)">Update</button>
     </p>
     <div id="publications">
         <div class="item-publication" *ngFor="let publication of publications">
@@ -34,16 +34,16 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title">¿Eliminar realmente la publicación?</h4>
+                                        <h4 class="modal-title">Do you want to delete the post?</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Si la borrás no podrás deshacer la operación.</p>
+                                        <p>If you delete the post you will not be able to undo the operation.</p>
                                         <!--<p>{{publication.text}}</p>-->
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                         <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deletePublication(publication._id)">
-                                            Eliminar
+                                            Delete
                                         </button>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
     <div class="col-lg-12 text-center" *ngIf="publications && publications.length">
         <p>
             <button class="btn btn-success" (click)="viewMore()" *ngIf="!noMore">
-                Ver más publicaciones
+                See more posts
             </button>
         </p>
     </div>

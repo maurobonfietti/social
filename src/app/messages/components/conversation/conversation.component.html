@@ -85,8 +85,8 @@
             <input type="submit" value="{{title}}" class="btn btn-success" />
         </form>-->
         <ul class="pagination pull-right">
-            <li *ngIf="page > 1 && total > 0"><a [routerLink]="['/mensajes/conversation', prev_page]">Anterior</a></li>
-            <li *ngIf="pages != page && total > 0"><a [routerLink]="['/mensajes/conversation', next_page]">Siguiente</a></li>
+            <li *ngIf="page > 1 && total > 0"><a [routerLink]="['/mensajes/conversation', prev_page]">Prev</a></li>
+            <li *ngIf="pages != page && total > 0"><a [routerLink]="['/mensajes/conversation', next_page]">Next</a></li>
         </ul>
     </div>
 </div>

@@ -33,10 +33,10 @@
                                 [class.btn-danger]="follow.user._id == followUserOver"
                         >
                             <span *ngIf="follow.user._id == followUserOver; else following">
-                                <span class="glyphicon glyphicon-minus-sign"></span> Dejar de seguir
+                                <span class="glyphicon glyphicon-minus-sign"></span> Stop Follow
                             </span>
                             <ng-template #following>
-                                <span class="glyphicon glyphicon-ok-sign"></span> Siguiendo
+                                <span class="glyphicon glyphicon-ok-sign"></span> Following
                             </ng-template>
                         </button>
                     </div>
@@ -44,8 +44,8 @@
             </div>
         </div>
         <ul class="pagination pull-right">
-            <li *ngIf="page > 1"><a [routerLink]="['/seguidores', userPageId, prev_page]">Anterior</a></li>
-            <li *ngIf="pages != page"><a [routerLink]="['/seguidores', userPageId, next_page]">Siguiente</a></li>
+            <li *ngIf="page > 1"><a [routerLink]="['/seguidores', userPageId, prev_page]">Prev</a></li>
+            <li *ngIf="pages != page"><a [routerLink]="['/seguidores', userPageId, next_page]">Next</a></li>
         </ul>
     </div>
 </div>

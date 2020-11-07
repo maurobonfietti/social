@@ -18,7 +18,7 @@ const appRoutes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
-    {path: 'mis-datos', component: UserEditComponent, canActivate:[UserGuard]},
+    {path: 'my-account', component: UserEditComponent, canActivate:[UserGuard]},
     {path: 'gente', component: UsersComponent, canActivate:[UserGuard]},
     {path: 'gente/:page', component: UsersComponent, canActivate:[UserGuard]},
     {path: 'timeline', component: TimelineComponent, canActivate:[UserGuard]},

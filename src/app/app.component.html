@@ -6,16 +6,16 @@
             </div>
             <ul class="nav navbar-nav" *ngIf="identity">
                 <li>
-                    <a [routerLink]="['/home']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-home"></span> Inicio</a>
+                    <a [routerLink]="['/home']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-home"></span> Home</a>
                 </li>
                 <li>
                     <a [routerLink]="['/timeline']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-th-list"></span> Timeline</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/gente']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-user"></span> Gente</a>
+                    <a [routerLink]="['/gente']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-user"></span> Find Friends</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/mensajes']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-envelope"></span> Mensajes</a>
+                    <a [routerLink]="['/mensajes']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-envelope"></span> Messages</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
@@ -23,7 +23,7 @@
                     <a [routerLink]="['/login']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-log-in"></span> Login</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/register']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-user"></span> Registrar</a>
+                    <a [routerLink]="['/register']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-user"></span> Register</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right" *ngIf="identity">
@@ -34,13 +34,13 @@
                     <a  class="dropdown-toggle" data-toggle="dropdown" href="#">{{identity.name}} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a [routerLink]="['/perfil', identity._id]"><span class="glyphicon glyphicon-user"></span> Mi perfil</a>
+                            <a [routerLink]="['/perfil', identity._id]"><span class="glyphicon glyphicon-user"></span> My Profile</a>
                         </li>
                         <li>
-                            <a [routerLink]="['/mis-datos']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-cog"></span> Mis datos</a>
+                            <a [routerLink]="['/my-account']" [routerLinkActive]="['active']"><span class="glyphicon glyphicon-cog"></span> My Account</a>
                         </li>
                         <li>
-                            <a class="pointer" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a>
+                            <a class="pointer" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                         </li>
                     </ul>
                 </li>

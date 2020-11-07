@@ -13,12 +13,12 @@ export class HomeComponent implements OnInit {
     constructor(
         private _userService: UserService
     ) {
-        this.title = 'Bienvenido!';
+        this.title = 'Welcome';
     }
 
     ngOnInit() {
         console.log('[OK] Component: home.');
-        console.log('Social App Version: 0.2.0');
+        console.log('Social App Version: 0.3.0');
         this.identity = this._userService.getIdentity();
     }
 

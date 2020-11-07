@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
         private _router: Router,
         private _userService: UserService
     ) {
-        this.title = 'Inicia Sesión';
+        this.title = 'Login';
         this.user = new User("", "", "", "", "", "", "ROLE_USER", "");
     }
 
