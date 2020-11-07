@@ -3,7 +3,7 @@
         {{title}}
     </h3>
     <div class="alert alert-success" *ngIf="status == 'success'">
-        Message sent.!
+        Message sent.
         See <a [routerLink]="['/mensajes/enviados']">sent messages</a>
     </div>
     <div class="alert alert-danger" *ngIf="status == 'error'">
