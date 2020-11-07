@@ -32,7 +32,7 @@ export class UsersComponent implements OnInit {
         private _userService: UserService,
         private _followService: FollowService
     ) {
-        this.title = 'Gente';
+        this.title = 'Find New Friends';
         this.url = GLOBAL.url;
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
