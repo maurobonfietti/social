@@ -33,7 +33,7 @@ export class ReceivedComponent implements OnInit {
         private _messageService: MessageService,
         private _userService: UserService,
     ) {
-        this.title = 'Mensajes recibidos';
+        this.title = 'Received messages';
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
         this.url = GLOBAL.url;
