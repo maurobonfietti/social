@@ -29,7 +29,7 @@
     "@angular/platform-browser-dynamic": "^6.1.10",
     "@angular/router": "^6.1.10",
     "angular2-moment": "^1.9.0",
-    "bootstrap": "3.3.6",
+    "bootstrap": "3.4.1",
     "core-js": "^2.5.7",
     "jquery": "1.12",
     "rxjs": "^6.3.3",
